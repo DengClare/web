@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD抽獎網頁</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* 將背景改為抽獎的圖片 */
+            background: url('0.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.8); /* 透明白色背景 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 40px;
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="icon" src="1.png" alt="抽獎圖示">
+
+        <h1 style="color: #333;">抽獎 1~5 元</h1>
+        <button onclick="drawLottery()">抽獎</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function drawLottery() {
+            const prizes = ['1元', '2元', '3元', '4元', '5元'];
+            const randomIndex = Math.floor(Math.random() * prizes.length);
+            const selectedPrize = prizes[randomIndex];
+            document.getElementById('result').innerText = `恭喜你抽中了：${selectedPrize}`;
+        }
+    </script>
+</body>
+</html>
